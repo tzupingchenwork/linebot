@@ -12,7 +12,7 @@ const app = express();
 const linebotParser = bot.parser();
 
 app.get('/',function(req,res){
-	res.render('index.ejs');
+    res.send('Hello World!');
 });
 
 app.post('/linewebhook', linebotParser);
@@ -25,6 +25,6 @@ bot.on('message', function (event) {
 	});
 });
 
-app.listen(process.env.PORT || 8080, function () {
+app.listen(process.env.PORT || 80, function () {
 	console.log('LineBot is running.');
 });
