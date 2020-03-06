@@ -18,7 +18,7 @@ app.get('/',function(req,res){
 app.post('/linewebhook', linebotParser);
 
 bot.on('message', function (event) {
-	event.reply(event.message.text).then(function (data) {
+	event.reply(`userId：${event.source.userId} 你說：${event.message.text}`).then(function (data) {
 		console.log('Success', data);
 	}).catch(function (error) {
 		console.log('Error', error);
